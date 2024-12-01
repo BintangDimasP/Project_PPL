@@ -8,14 +8,18 @@ import { useNavigation } from "@react-navigation/native";
 const Header = ({ title, withBack = false }) => {
   const trueGray900 = "#171717";
   const navigation = useNavigation();
+
   return (
-    <SafeAreaView >
+    <SafeAreaView>
       <StatusBar barStyle="light" backgroundColor={trueGray900} />
       <Box bg={"trueGray.900"} p={"4"}>
         <HStack justifyContent="space-between" alignItems="center">
           <HStack alignItems="center">
             {!withBack ? (
-              <>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                onPress={() => navigation.navigate("Home")}
+              >
                 <Image
                   source={require("../assets/info-sehat.jpg")}
                   w="12"
@@ -24,7 +28,7 @@ const Header = ({ title, withBack = false }) => {
                   mr={"3"}
                   rounded={"full"}
                 />
-              </>
+              </TouchableOpacity>
             ) : (
               <TouchableOpacity
                 activeOpacity={0.5}
@@ -39,13 +43,13 @@ const Header = ({ title, withBack = false }) => {
           </HStack>
 
           <HStack space={"2xl"}>
-          <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
-            <Image
-              source={require("../assets/profile.png")}
-              w="6"
-              h="6"
-              alt="profile icon"
-            />
+            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+              <Image
+                source={require("../assets/profile.png")}
+                w="6"
+                h="6"
+                alt="profile icon"
+              />
             </TouchableOpacity>
           </HStack>
         </HStack>
