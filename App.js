@@ -28,7 +28,7 @@ const Tabs = () => {
               iconName = "compass-outline";
               break;
             case "Profile":
-              iconName = "time-outline";
+              iconName = "person-outline";
               break;
           }
           return <Ionicons name={iconName} size={28} color={focused ? "black" : color} />;
@@ -55,7 +55,7 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Tabs" component={Tabs} options={noHead} />
-          <Stack.Screen name="News Detail" component={NewsDetail} />
+          <Stack.Screen name="News Detail" component={NewsDetail} options={noHead} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
