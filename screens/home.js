@@ -19,7 +19,7 @@ const Home = () => {
           <TouchableOpacity
             key={item.id}
             activeOpacity={0.8}
-            // onPress={() => navigation.navigate("News Detail", { item: item })}
+            onPress={() => navigation.navigate("News Detail", { item: item })}
           >
             <Box w={"72"} h={"40"} mr={"4"} borderRadius="md" overflow="hidden">
               <Image source={{ uri: item.image }} alt="Breaking News Image" w="full" h="full" />
@@ -36,14 +36,14 @@ const Home = () => {
     <Box py={"4"} px={"4"} bg="white">
     <Box flexDirection="row" justifyContent="space-between" alignItems="center" mb="2">
             <Heading>Recommended</Heading>
-            {/* <TouchableOpacity onPress={() => navigation.navigate("Discover")}>
+            <TouchableOpacity onPress={() => navigation.navigate("Discover")}>
               <Text color="gray.700">View All</Text>
-            </TouchableOpacity> */}
+            </TouchableOpacity>
           </Box>
       {datas.slice(4, 8).map((item) => (
         <TouchableOpacity
           key={item.id}
-          // onPress={() => navigation.navigate("News Detail", { item: item })}
+          onPress={() => navigation.navigate("News Detail", { item: item })}
         >
           <Box flexDirection="row" alignItems="center" mb="4" p="2" borderRadius="md" borderColor="coolGray.200" borderWidth={1}>
             <Image
