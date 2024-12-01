@@ -1,3 +1,4 @@
+
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
@@ -6,6 +7,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import Home from "./screens/home";
 import Profile from "./screens/profile";
 import Discover from "./screens/discover";
+import NewsDetail from "./screens/news-detail";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -53,6 +55,7 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Tabs" component={Tabs} options={noHead} />
+          <Stack.Screen name="News Detail" component={NewsDetail} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
