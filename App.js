@@ -8,6 +8,7 @@ import Home from "./screens/home";
 import Profile from "./screens/profile";
 import Discover from "./screens/discover";
 import NewsDetail from "./screens/news-detail";
+import TipsPolaMakananSehat from "./screens/tips";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -30,6 +31,9 @@ const Tabs = () => {
             case "Profile":
               iconName = "person-outline";
               break;
+            case "Tips":
+              iconName = "bulb-outline";
+              break;
           }
           return <Ionicons name={iconName} size={28} color={focused ? "black" : color} />;
         },
@@ -45,6 +49,7 @@ const Tabs = () => {
       <Tab.Screen name="Home" component={Home} options={noHead} />
       <Tab.Screen name="Discover" component={Discover} options={noHead} />
       <Tab.Screen name="Profile" component={Profile} options={noHead} />
+      <Tab.Screen name="Tips" component={TipsPolaMakananSehat} options={noHead} />
     </Tab.Navigator>
   );
 };
