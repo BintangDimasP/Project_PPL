@@ -9,6 +9,7 @@ import Profile from "./screens/profile";
 import Discover from "./screens/discover";
 import NewsDetail from "./screens/news-detail";
 import TipsPolaMakananSehat from "./screens/tips";
+import Olahraga from "./screens/Olahraga";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -61,6 +62,8 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen name="Tabs" component={Tabs} options={noHead} />
           <Stack.Screen name="News Detail" component={NewsDetail} options={noHead} />
+          <Stack.Screen  name="Olahraga" component={Olahraga} options={{headerBackTitle: 'Kembali', headerTitle: 'Back',}}/>
+          
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

@@ -1,8 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
 import { Header } from "../components";
+import { useNavigation } from '@react-navigation/native';
 
 const TipsPolaMakananSehat = () => {
+  const navigation = useNavigation();
+
   const tips = [
     {
       id: '1',
@@ -46,6 +49,22 @@ const TipsPolaMakananSehat = () => {
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.list}
       />
+
+      {/* Tambahkan Tombol */}
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('LatihanPernafasan')}
+        >
+          <Text style={styles.buttonText}>Latihan Pernafasan</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate('Olahraga')}
+        >
+          <Text style={styles.buttonText}>Olahraga</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -84,6 +103,23 @@ const styles = StyleSheet.create({
   cardDescription: {
     fontSize: 14,
     color: '#666',
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    padding: 20,
+  },
+  button: {
+    backgroundColor: '#4CAF50',
+    padding: 15,
+    borderRadius: 8,
+    alignItems: 'center',
+    width: '40%',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
 
