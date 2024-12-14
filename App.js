@@ -10,6 +10,7 @@ import Discover from "./screens/discover";
 import NewsDetail from "./screens/news-detail";
 import TipsPolaMakananSehat from "./screens/tips";
 import Olahraga from "./screens/Olahraga";
+import Nafas from "./screens/nafas";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -49,8 +50,8 @@ const Tabs = () => {
     >
       <Tab.Screen name="Home" component={Home} options={noHead} />
       <Tab.Screen name="Discover" component={Discover} options={noHead} />
-      <Tab.Screen name="Profile" component={Profile} options={noHead} />
       <Tab.Screen name="Tips" component={TipsPolaMakananSehat} options={noHead} />
+      <Tab.Screen name="Profile" component={Profile} options={noHead} />
     </Tab.Navigator>
   );
 };
@@ -62,8 +63,8 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen name="Tabs" component={Tabs} options={noHead} />
           <Stack.Screen name="News Detail" component={NewsDetail} options={noHead} />
-          <Stack.Screen  name="Olahraga" component={Olahraga} options={{headerBackTitle: 'Kembali', headerTitle: 'Back',}}/>
-          
+          <Stack.Screen  name="Olahraga" component={Olahraga} options={noHead}/>
+          <Stack.Screen  name="Nafas" component={Nafas} options={noHead}/>
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
