@@ -11,6 +11,14 @@ import NewsDetail from "./screens/news-detail";
 import TipsPolaMakananSehat from "./screens/tips";
 import Olahraga from "./screens/Olahraga";
 import Nafas from "./screens/nafas";
+import BMICalculator from "./screens/BMICalculator";
+import BMIInfo from './screens/BMIInfo';
+import BMIHistory from './screens/BMIHistory';
+
+
+
+
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -36,6 +44,9 @@ const Tabs = () => {
             case "Tips":
               iconName = "bulb-outline";
               break;
+            case "BMI":
+              iconName = "fitness-outline";
+              break;
           }
           return <Ionicons name={iconName} size={28} color={focused ? "black" : color} />;
         },
@@ -51,6 +62,7 @@ const Tabs = () => {
       <Tab.Screen name="Home" component={Home} options={noHead} />
       <Tab.Screen name="Discover" component={Discover} options={noHead} />
       <Tab.Screen name="Tips" component={TipsPolaMakananSehat} options={noHead} />
+      <Tab.Screen name="BMI" component={BMICalculator} options={noHead} />
       <Tab.Screen name="Profile" component={Profile} options={noHead} />
     </Tab.Navigator>
   );
@@ -63,8 +75,10 @@ const App = () => {
         <Stack.Navigator>
           <Stack.Screen name="Tabs" component={Tabs} options={noHead} />
           <Stack.Screen name="News Detail" component={NewsDetail} options={noHead} />
-          <Stack.Screen  name="Olahraga" component={Olahraga} options={noHead}/>
-          <Stack.Screen  name="Nafas" component={Nafas} options={noHead}/>
+          <Stack.Screen name="Olahraga" component={Olahraga} options={noHead} />
+          <Stack.Screen name="Nafas" component={Nafas} options={noHead} />
+          <Stack.Screen name="BMIInfo" component={BMIInfo} options={{ title: "BMI Info" }} />
+          <Stack.Screen name="BMIHistory" component={BMIHistory} options={{ title: "BMI History" }} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
